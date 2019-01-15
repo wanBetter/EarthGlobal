@@ -7,19 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SuperMap.Data;
-using SuperMap.Mapping;
-using SuperMap.Realspace;
-using SuperMap.UI;
+using EarthGlobal;
 
-namespace EarthGlobal
+
+namespace EarthGlobalTest
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
+            EarthGlobal.UCEarthGlobal m_MainEarthGlobal = new EarthGlobal.UCEarthGlobal { Dock = DockStyle.Fill };
             
+            this.Controls.Add(m_MainEarthGlobal);
         }
     }
 }

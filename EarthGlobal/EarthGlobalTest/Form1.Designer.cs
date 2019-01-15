@@ -1,4 +1,4 @@
-﻿namespace EarthGlobal
+﻿namespace EarthGlobalTest
 {
     partial class Form1
     {
@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 451);
+            this.ClientSize = new System.Drawing.Size(895, 447);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
