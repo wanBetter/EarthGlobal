@@ -58,19 +58,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="SuperMap.Data">
-      <HintPath>..\..\..\..\..\立得三维\supermap-iobjectsdotnet-9.1.1-16828-70590-win64-all-Bin\Bin_x64\SuperMap.Data.dll</HintPath>
+      <HintPath>E:\learn\supermap-iobjectsdotnet-9.1.1-16828-70590-win64-all-Bin\Bin_x64\SuperMap.Data.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
+    <Reference Include="SuperMap.Data.Conversion, Version=7.0.0.0, Culture=neutral, PublicKeyToken=0635c574ea890381, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\learn\supermap-iobjectsdotnet-9.1.1-16828-70590-win64-all-Bin\Bin_x64\SuperMap.Data.Conversion.dll</HintPath>
+    </Reference>
     <Reference Include="SuperMap.Mapping">
-      <HintPath>..\..\..\..\..\立得三维\supermap-iobjectsdotnet-9.1.1-16828-70590-win64-all-Bin\Bin_x64\SuperMap.Mapping.dll</HintPath>
+      <HintPath>E:\learn\supermap-iobjectsdotnet-9.1.1-16828-70590-win64-all-Bin\Bin_x64\SuperMap.Mapping.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="SuperMap.Realspace">
-      <HintPath>..\..\..\..\..\立得三维\supermap-iobjectsdotnet-9.1.1-16828-70590-win64-all-Bin\Bin_x64\SuperMap.Realspace.dll</HintPath>
+      <HintPath>E:\learn\supermap-iobjectsdotnet-9.1.1-16828-70590-win64-all-Bin\Bin_x64\SuperMap.Realspace.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="SuperMap.UI.Controls">
-      <HintPath>..\..\..\..\..\立得三维\supermap-iobjectsdotnet-9.1.1-16828-70590-win64-all-Bin\Bin_x64\SuperMap.UI.Controls.dll</HintPath>
+      <HintPath>E:\learn\supermap-iobjectsdotnet-9.1.1-16828-70590-win64-all-Bin\Bin_x64\SuperMap.UI.Controls.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="System" />
@@ -85,12 +89,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataImport\CDataImport.cs" />
+    <Compile Include="DataImport\DEMLoad.cs" />
+    <Compile Include="DataImport\DOMLoad.cs" />
+    <Compile Include="DataImport\PrjLoad.cs" />
+    <Compile Include="DataImport\ShpLoad.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModelEdit\ModelAdd.cs" />
+    <Compile Include="ModelEdit\ModelDelete.cs" />
+    <Compile Include="ModelEdit\ModelEdit.cs" />
+    <Compile Include="ModelEdit\ModelSelect.cs" />
+    <Compile Include="ModelEdit\TerrainEdit.cs" />
+    <Compile Include="Operate\SelectOpe.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UCEarthGlobal.cs">
