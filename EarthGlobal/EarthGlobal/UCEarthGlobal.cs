@@ -17,6 +17,7 @@ namespace EarthGlobal
     {
 
         internal static SceneControl m_MainSceneControl = new SceneControl { Dock = DockStyle.Fill };
+        internal static UI.Ctr3DToolBar m_TollBar = new UI.Ctr3DToolBar();
         
         public UCEarthGlobal()
         {
@@ -28,7 +29,9 @@ namespace EarthGlobal
         {
             m_MainSceneControl.Scene.LatLonGrid.IsVisible = false;
             m_MainSceneControl.Scene.Sun.IsVisible = false;
+            this.Controls.Add(m_TollBar);
             this.Controls.Add(m_MainSceneControl);
+            
             DataImport.PrjLoad prjLoad = new DataImport.PrjLoad();
             prjLoad.DefaultPrjLoad();
 

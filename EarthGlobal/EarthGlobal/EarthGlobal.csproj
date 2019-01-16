@@ -89,6 +89,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\DragForm.cs" />
     <Compile Include="DataImport\CDataImport.cs" />
     <Compile Include="DataImport\DEMLoad.cs" />
     <Compile Include="DataImport\DOMLoad.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModelEdit\CModelEdit.cs" />
     <Compile Include="ModelEdit\ModelAdd.cs" />
     <Compile Include="ModelEdit\ModelDelete.cs" />
     <Compile Include="ModelEdit\ModelEdit.cs" />
@@ -113,6 +115,12 @@
     </Compile>
     <Compile Include="UCEarthGlobal.Designer.cs">
       <DependentUpon>UCEarthGlobal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Ctr3DToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Ctr3DToolBar.designer.cs">
+      <DependentUpon>Ctr3DToolBar.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -130,6 +138,9 @@
     <EmbeddedResource Include="UCEarthGlobal.resx">
       <DependentUpon>UCEarthGlobal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Ctr3DToolBar.resx">
+      <DependentUpon>Ctr3DToolBar.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -142,6 +153,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ToolBar\icon-3d面积量测.png" />
+    <Content Include="Resources\ToolBar\icon-north.png" />
+    <Content Include="Resources\ToolBar\icon-地面面积测量.png" />
+    <Content Include="Resources\ToolBar\icon-垂直量测.png" />
+    <Content Include="Resources\ToolBar\icon-放大.png" />
+    <Content Include="Resources\ToolBar\icon-旋转.png" />
+    <Content Include="Resources\ToolBar\icon-水平量测.png" />
+    <Content Include="Resources\ToolBar\icon-清除.png" />
+    <Content Include="Resources\ToolBar\icon-空间量测.png" />
+    <Content Include="Resources\ToolBar\icon-缩小.png" />
+    <Content Include="Resources\ToolBar\toolbg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -57,6 +57,7 @@ namespace EarthGlobal.DataImport
         #region 加载DEM
         public void LoadDem(string _demFilePath)
         {
+            
             SuperMap.Data.Conversion.DataImport m_dataImport = new SuperMap.Data.Conversion.DataImport();
             //导入dem
             m_dataImport.ImportSettings.Clear();
@@ -69,8 +70,9 @@ namespace EarthGlobal.DataImport
 
             m_dataImport.ImportSettings.Add(imgSetting);
             m_dataImport.Run();
+            IEnumerable<DatasetGrid> dataGridList = UCEarthGlobal.m_MainSceneControl.Scene.Workspace.Datasources["Default"].Datasets.OfType<DatasetGrid>();
+            DatasetGrid importResult = dataGridList.ToList().Find(v=>v.Name==System.IO.Path.GetFileNameWithoutExtension(_demFilePath)) as DatasetGrid;
 
-            DatasetGrid importResult = UCEarthGlobal.m_MainSceneControl.Scene.Workspace.Datasources["Default"].Datasets[0] as DatasetGrid;
             TerrainLayer terrainLayer = UCEarthGlobal.m_MainSceneControl.Scene.TerrainLayers.Add(importResult, true);
             UCEarthGlobal.m_MainSceneControl.Scene.Fly(new Camera { Latitude = terrainLayer.Bounds.Center.X, Longitude = terrainLayer.Bounds.Center.Y, Altitude = 10 });
         }
@@ -91,14 +93,27 @@ namespace EarthGlobal.DataImport
 
             m_dataImport.ImportSettings.Add(imgSetting1);
             m_dataImport.Run();
-            DatasetImage importResult1 = UCEarthGlobal.m_MainSceneControl.Scene.Workspace.Datasources["Default"].Datasets[1] as DatasetImage;
+            IEnumerable<DatasetImage> dataimgList = UCEarthGlobal.m_MainSceneControl.Scene.Workspace.Datasources["Default"].Datasets.OfType<DatasetImage>();
+            DatasetImage importResult = dataimgList.ToList().Find(v => v.Name == System.IO.Path.GetFileNameWithoutExtension(_domFilePath)) as DatasetImage;
+           
         }
         #endregion
 
         #region 加载shp文件
         public void LoadShp(string _shpFilePath)
         {
+            SuperMap.Data.Conversion.DataImport m_dataImport = new SuperMap.Data.Conversion.DataImport();
+            m_dataImport.ImportSettings.Clear();
+            ImportSettingSHP imgSetting = new ImportSettingSHP();
 
+            imgSetting.ImportMode = ImportMode.Overwrite;
+            imgSetting.SourceFilePath = _shpFilePath;
+            imgSetting.TargetDatasource = UCEarthGlobal.m_MainSceneControl.Scene.Workspace.Datasources["Default"];
+            imgSetting.IsAttributeIgnored = false;
+            m_dataImport.ImportSettings.Add(imgSetting);
+            m_dataImport.Run();
+            IEnumerable<DatasetVector> dataimgList = UCEarthGlobal.m_MainSceneControl.Scene.Workspace.Datasources["Default"].Datasets.OfType<DatasetVector>();
+            DatasetVector importResult = dataimgList.ToList().Find(v => v.Name == System.IO.Path.GetFileNameWithoutExtension(_shpFilePath)) as DatasetVector;
         }
         #endregion
     }
