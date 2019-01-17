@@ -11,50 +11,12 @@ namespace EarthGlobal.DataImport
 {
     public class CDataImport
     {
-        private Workspace m_workspace;
-        private WorkspaceConnectionInfo m_connectionInfo;
-        private Datasource m_datasource;
-        public Workspace Workspace
-        {
-            get { return this.m_workspace; }
-            set { this.m_workspace = value; }
-        }
-        public Datasource Datasource
-        {
-            get { return this.m_datasource; }
-            set { this.m_datasource = value; }
-        }
+        
         public CDataImport()
         {
-            m_workspace = new Workspace();
-            m_connectionInfo = new WorkspaceConnectionInfo();
+            
         }
-        #region 加载工作空间
-        internal void DefaultPrjLoad()
-        {
-
-            m_connectionInfo.Version = WorkspaceVersion.UGC60;
-            m_connectionInfo.Type = WorkspaceType.SMWU;
-            m_connectionInfo.Server = $"{AppDomain.CurrentDomain.BaseDirectory}\\Default.smwu";
-            m_connectionInfo.Name = "Default";
-            m_workspace.Create(m_connectionInfo);
-            DatasourceConnectionInfo datasourceConInfo = new DatasourceConnectionInfo();
-            datasourceConInfo.Server = $"{AppDomain.CurrentDomain.BaseDirectory}\\Default.udb";
-            datasourceConInfo.Alias = "Default";
-            m_workspace.Datasources.CloseAll();
-            if (System.IO.File.Exists("Default.udb"))
-                m_datasource = m_workspace.Datasources.Open(datasourceConInfo);
-            else
-                m_datasource = m_workspace.Datasources.Create(datasourceConInfo);
-            UCEarthGlobal.m_MainSceneControl.Scene.Workspace = m_workspace;
-        }
-        public void LoadPrj(string _prjFilePath)
-        {
-
-        }
-        #endregion
-
-        #region 加载DEM
+        #region 地形数据加载Dem Tiff格式
         public void LoadDem(string _demFilePath)
         {
             
@@ -78,7 +40,7 @@ namespace EarthGlobal.DataImport
         }
         #endregion
 
-        #region 加载Ddom
+        #region 加载正射影像  TIFF
         public void LoadDom(string _domFilePath)
         {
             SuperMap.Data.Conversion.DataImport m_dataImport = new SuperMap.Data.Conversion.DataImport();
@@ -99,7 +61,7 @@ namespace EarthGlobal.DataImport
         }
         #endregion
 
-        #region 加载shp文件
+        #region 背景地物分类目标区域类shp文件
         public void LoadShp(string _shpFilePath)
         {
             SuperMap.Data.Conversion.DataImport m_dataImport = new SuperMap.Data.Conversion.DataImport();
@@ -116,5 +78,8 @@ namespace EarthGlobal.DataImport
             DatasetVector importResult = dataimgList.ToList().Find(v => v.Name == System.IO.Path.GetFileNameWithoutExtension(_shpFilePath)) as DatasetVector;
         }
         #endregion
+        
+
+
     }
 }

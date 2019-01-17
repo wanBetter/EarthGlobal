@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EarthGlobal</RootNamespace>
     <AssemblyName>EarthGlobal</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +33,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -91,10 +93,6 @@
   <ItemGroup>
     <Compile Include="Common\DragForm.cs" />
     <Compile Include="DataImport\CDataImport.cs" />
-    <Compile Include="DataImport\DEMLoad.cs" />
-    <Compile Include="DataImport\DOMLoad.cs" />
-    <Compile Include="DataImport\PrjLoad.cs" />
-    <Compile Include="DataImport\ShpLoad.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,12 +100,10 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelEdit\CModelEdit.cs" />
-    <Compile Include="ModelEdit\ModelAdd.cs" />
-    <Compile Include="ModelEdit\ModelDelete.cs" />
-    <Compile Include="ModelEdit\ModelEdit.cs" />
-    <Compile Include="ModelEdit\ModelSelect.cs" />
     <Compile Include="ModelEdit\TerrainEdit.cs" />
     <Compile Include="Operate\SelectOpe.cs" />
+    <Compile Include="PrjWorkSpace\CPrjFile.cs" />
+    <Compile Include="PrjWorkSpace\CPrjWorkspace.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UCEarthGlobal.cs">
