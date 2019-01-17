@@ -32,8 +32,8 @@ namespace EarthGlobal
             this.Controls.Add(m_TollBar);
             this.Controls.Add(m_MainSceneControl);
             
-            DataImport.PrjLoad prjLoad = new DataImport.PrjLoad();
-            prjLoad.DefaultPrjLoad();
+            //DataImport.PrjLoad prjLoad = new DataImport.PrjLoad();
+           // prjLoad.DefaultPrjLoad();
 
         }
     }

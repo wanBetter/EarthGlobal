@@ -20,8 +20,8 @@ namespace EarthGlobalTest
             EarthGlobal.UCEarthGlobal m_MainEarthGlobal = new EarthGlobal.UCEarthGlobal { Dock = DockStyle.Fill };
             
             this.Controls.Add(m_MainEarthGlobal);
-            EarthGlobal.DataImport.DEMLoad demLoad = new EarthGlobal.DataImport.DEMLoad();
-            demLoad.LoadDem(@"E:\三维规划\04-DEM\demClip\DEM-CG-ALL-投影坐标_Clip.img");
+            //EarthGlobal.DataImport.DEMLoad demLoad = new EarthGlobal.DataImport.DEMLoad();
+            //demLoad.LoadDem(@"E:\三维规划\04-DEM\demClip\DEM-CG-ALL-投影坐标_Clip.img");
         }
     }
 }
