@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EarthGlobal.ModelEdit
 {
-    class TerrainEdit
+    class CTerrainEdit
     {
     }
 }

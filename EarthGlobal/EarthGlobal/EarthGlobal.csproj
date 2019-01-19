@@ -100,7 +100,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelEdit\CModelEdit.cs" />
-    <Compile Include="ModelEdit\TerrainEdit.cs" />
+    <Compile Include="ModelEdit\CTerrainEdit.cs" />
     <Compile Include="Operate\SelectOpe.cs" />
     <Compile Include="PrjWorkSpace\CPrjFile.cs" />
     <Compile Include="PrjWorkSpace\CPrjWorkspace.cs" />
